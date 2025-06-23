@@ -1,6 +1,6 @@
 # sqlintern
 
-code:
+# code:
 use library_man;
 -- MEMBERS
 CREATE TABLE members (
@@ -105,3 +105,12 @@ INSERT INTO returns VALUES
 (1, 1, '2025-07-04', 0.00);
 
 ER DIAGRAM:
+![library](https://github.com/user-attachments/assets/57372ebe-f292-4616-8d53-f17dce807d65)
+
+OUTPUT:
+![image](https://github.com/user-attachments/assets/73514df5-051b-4279-8374-bd37f47bc927)
+![image](https://github.com/user-attachments/assets/24123d2e-0e23-4cfc-a4ee-2fc7156b32e4)
+![image](https://github.com/user-attachments/assets/e048bc7b-ec44-40bd-8f41-fbd1c51c8207)
+![image](https://github.com/user-attachments/assets/da5b4e54-b697-4b4f-a3ac-82c99ebcccfe)
+![image](https://github.com/user-attachments/assets/8022474a-71c0-4706-b20a-d5ea329fc63a)
+
