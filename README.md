@@ -1,5 +1,32 @@
 # sqlintern
 
+# task 2:
+# insert query:
+INSERT INTO members (member_id, name, email, phone, address)
+VALUES (3, 'Emily Thomas', 'emily@example.com', '9001234567', '789 Library Ln, City');
+# (missing bio handled with NULL):
+INSERT INTO authors (author_id, name, biography)
+VALUES (3, 'Stephen King', NULL);
+# Handle Missing Values using NULL or DEFAULT
+ALTER TABLE returns MODIFY fine DECIMAL(10,2) DEFAULT 0.00;
+INSERT INTO returns (return_id, issue_id, return_date)
+VALUES (2, 1, '2025-07-10');
+# Use UPDATE and DELETE with WHERE
+UPDATE books
+SET available_copies = 4
+WHERE book_id = 1;
+# Delete a member by ID:
+DELETE FROM members
+WHERE member_id = 2;
+# output:
+![image](https://github.com/user-attachments/assets/abbe045e-2458-46a3-bcbc-9ac206cdff0b)
+![image](https://github.com/user-attachments/assets/541bd845-b41e-4511-a343-d9429b13203e)
+![image](https://github.com/user-attachments/assets/fc711643-ac4e-488b-b4b7-b969a1197120)
+![image](https://github.com/user-attachments/assets/ba695a77-c3c3-4324-a617-115a6086d356)
+![image](https://github.com/user-attachments/assets/93f3ef4c-61de-4512-a1e1-d4b934293db7)
+![image](https://github.com/user-attachments/assets/b8b3d6df-bc85-4194-a8a3-03e42f05251b)
+
+
 # code:
 use library_man;
 -- MEMBERS
