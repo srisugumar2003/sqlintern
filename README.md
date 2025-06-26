@@ -81,7 +81,15 @@ SELECT * FROM Employees ORDER BY last_name;
 
 # output:
 
-![Screenshot 2025-06-26 210003](https://github.com/user-attachments/assets/de34437e-7767-4456-ad8c-d07076537274)
+![Screenshot 2025-06-26 210115](https://github.com/user-attachments/assets/6c391dba-cb94-498a-bb31-a4ee1c4033d1)
+![Screenshot 2025-06-26 210003](https://github.com/user-attachments/assets/f1de590e-acd6-42d6-b5f8-d0406b6d91ff)
+![Screenshot 2025-06-26 205939](https://github.com/user-attachments/assets/1be84beb-1ab6-4638-8eea-84d4f2423742)
+![Screenshot 2025-06-26 205917](https://github.com/user-attachments/assets/3a8d7c71-4bd9-4428-8234-765580940fd1)
+![Screenshot 2025-06-26 205852](https://github.com/user-attachments/assets/78b6a84a-793b-426b-b42b-4ce257309e53)
+![Screenshot 2025-06-26 205823](https://github.com/user-attachments/assets/294eda81-d780-4f89-bda9-adfb0f09df30)
+![Screenshot 2025-06-26 205739](https://github.com/user-attachments/assets/3a1dd69c-b4ba-4368-92cb-53a0bb03bb43)
+![Screenshot 2025-06-26 205712](https://github.com/user-attachments/assets/eda62a3e-546a-4738-b324-fad12faab0fb)
+
 
 
 
