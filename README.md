@@ -1,5 +1,91 @@
 # sqlintern
 
+# task 3:
+
+CREATE DATABASE sample_db;
+USE sample_db;
+
+-- Create Employees table
+CREATE TABLE Employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    department VARCHAR(50),
+    salary DECIMAL(10,2),
+    hire_date DATE,
+    email VARCHAR(100)
+);
+
+-- Create Products table
+CREATE TABLE Products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    price DECIMAL(10,2),
+    stock_quantity INT,
+    supplier_id INT
+);
+
+-- Create Orders table
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    total_amount DECIMAL(10,2),
+    status VARCHAR(20)
+);
+
+-- Insert data into Employees
+INSERT INTO Employees VALUES
+(1, 'John', 'Doe', 'Sales', 55000.00, '2020-05-15', 'john.doe@company.com'),
+(2, 'Jane', 'Smith', 'HR', 60000.00, '2019-03-10', 'jane.smith@company.com'),
+(3, 'Robert', 'Johnson', 'IT', 75000.00, '2018-07-22', 'robert.johnson@company.com'),
+(4, 'Emily', 'Williams', 'Sales', 52000.00, '2021-01-30', 'emily.williams@company.com'),
+(5, 'Michael', 'Brown', 'IT', 80000.00, '2017-11-05', 'michael.brown@company.com');
+
+-- Insert data into Products
+INSERT INTO Products VALUES
+(101, 'Laptop', 'Electronics', 999.99, 50, 1001),
+(102, 'Smartphone', 'Electronics', 699.99, 100, 1001),
+(103, 'Desk Chair', 'Furniture', 199.50, 30, 1002),
+(104, 'Coffee Table', 'Furniture', 249.99, 20, 1002),
+(105, 'Monitor', 'Electronics', 299.99, 75, 1003);
+
+-- Insert data into Orders
+INSERT INTO Orders VALUES
+(1001, 5001, '2023-01-15', 999.99, 'Completed'),
+(1002, 5002, '2023-02-20', 949.98, 'Completed'),
+(1003, 5003, '2023-03-10', 449.49, 'Shipped'),
+(1004, 5001, '2023-04-05', 199.50, 'Processing'),
+(1005, 5004, '2023-05-12', 699.99, 'Completed');
+
+SELECT * FROM Employees;
+
+SELECT first_name, last_name, department FROM Employees;
+
+SELECT * FROM Products WHERE category = 'Electronics';
+
+SELECT * FROM Employees 
+WHERE department = 'IT' AND salary > 70000;
+
+SELECT * FROM Products 
+WHERE category = 'Electronics' OR price > 200;
+
+SELECT * FROM Employees 
+WHERE email LIKE '%@company.com';
+
+SELECT * FROM Orders 
+WHERE order_date BETWEEN '2023-01-01' AND '2023-03-31';
+
+SELECT * FROM Employees ORDER BY last_name;
+
+# output:
+
+![Screenshot 2025-06-26 210003](https://github.com/user-attachments/assets/de34437e-7767-4456-ad8c-d07076537274)
+
+
+
+
 # task 2:
 # insert query:
 INSERT INTO members (member_id, name, email, phone, address)
