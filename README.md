@@ -1,5 +1,95 @@
 # sqlintern
 
+# task 4:
+create database sales_db;
+
+use sales_db;
+
+CREATE TABLE Customers (
+    customer_id INT PRIMARY KEY,
+    customer_name VARCHAR(100),
+    country VARCHAR(50),
+    customer_since DATE
+);
+
+-- Create Products table
+CREATE TABLE Products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    price DECIMAL(10,2)
+);
+
+-- Create Orders table (for aggregation exercises)
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    total_amount DECIMAL(10,2),
+    status VARCHAR(20),
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+);
+
+
+INSERT INTO Customers VALUES
+(1, 'Alice Johnson', 'USA', '2020-01-15'),
+(2, 'Bob Smith', 'UK', '2019-05-20'),
+(3, 'Carlos Ruiz', 'Spain', '2021-03-10'),
+(4, 'Diana Chen', 'USA', '2020-11-05'),
+(5, 'Ethan Wilson', 'Canada', '2022-02-18');
+
+-- Insert products
+INSERT INTO Products VALUES
+(101, 'Wireless Headphones', 'Electronics', 99.99),
+(102, 'Bluetooth Speaker', 'Electronics', 79.99),
+(103, 'Desk Lamp', 'Home', 29.99),
+(104, 'Notebook', 'Office', 9.99),
+(105, 'Coffee Mug', 'Home', 12.99);
+
+-- Insert orders
+INSERT INTO Orders VALUES
+(1001, 1, '2023-01-10', 199.98, 'Completed'),
+(1002, 2, '2023-01-15', 79.99, 'Completed'),
+(1003, 1, '2023-02-05', 119.97, 'Shipped'),
+(1004, 3, '2023-02-20', 29.99, 'Completed'),
+(1005, 4, '2023-03-01', 139.96, 'Processing');
+
+
+SELECT COUNT(*) AS total_orders FROM Orders;
+
+SELECT SUM(total_amount) AS total_sales FROM Orders;
+
+SELECT AVG(total_amount) AS average_order_value FROM Orders;
+
+SELECT 
+    MIN(total_amount) AS smallest_order,
+    MAX(total_amount) AS largest_order
+FROM Orders;
+
+SELECT 
+    status, 
+    COUNT(*) AS order_count
+FROM Orders
+GROUP BY status;
+
+SELECT 
+    customer_id,
+    COUNT(*) AS order_count
+FROM Orders
+GROUP BY customer_id
+HAVING COUNT(*) > 1;
+
+
+# output:
+
+![Screenshot 2025-06-27 203223](https://github.com/user-attachments/assets/24be8256-78e4-4c62-952f-274912d574f8)
+![Screenshot 2025-06-27 203325](https://github.com/user-attachments/assets/f419deb3-eceb-41ce-bbbe-efd7b93e3b99)
+![Screenshot 2025-06-27 203349](https://github.com/user-attachments/assets/743901b1-313d-485f-b91e-79f9f360ad3f)
+![Screenshot 2025-06-27 203409](https://github.com/user-attachments/assets/0b0aa528-0bda-42ba-9f2d-338aec52149c)
+![Screenshot 2025-06-27 203435](https://github.com/user-attachments/assets/d093fcc1-dde2-42b7-bfad-a10e5d5165a1)
+![Screenshot 2025-06-27 203519](https://github.com/user-attachments/assets/d29ee16b-cba9-4c98-a007-488af82dd710)
+
+
 # task 3:
 
 CREATE DATABASE sample_db;
