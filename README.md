@@ -1,4 +1,27 @@
 # sqlintern
+# task 6:
+# 1. Scalar Subquery SELECT title, total_copies FROM books WHERE total_copies = (SELECT MAX(total_copies) FROM books);
+![image](https://github.com/user-attachments/assets/91937f42-4470-435d-90b2-6300996d2b53)
+# 2. Correlated Subquery SELECT name FROM members m WHERE EXISTS ( SELECT 1 FROM issued_books ib WHERE ib.member_id = m.member_id );
+![image](https://github.com/user-attachments/assets/2d27265f-3c7a-4ae7-a713-0abfa4043854)
+# 3. Subquery with IN SELECT name FROM authors WHERE author_id IN ( SELECT DISTINCT author_id FROM book_author );
+![image](https://github.com/user-attachments/assets/e45c0efa-290a-493b-84ea-c4a72b1ed7ef)
+# 4. Subquery with EXISTS SELECT title FROM books b WHERE EXISTS ( SELECT 1 FROM issued_books i WHERE i.book_id = b.book_id );
+![image](https://github.com/user-attachments/assets/5dc7c1b8-d171-46e0-9fc5-9f3e183005e6)
+# 5. Subquery with = SELECT name FROM categories WHERE category_id = ( SELECT category_id FROM books ORDER BY book_id DESC LIMIT 1 );
+![image](https://github.com/user-attachments/assets/1dd39643-0212-40c8-9720-60cf5254fbbe)
+
+# task 5:
+# INNER SELECT b.title, c.name AS category FROM books b INNER JOIN categories c ON b.category_id = c.category_id;
+![image](https://github.com/user-attachments/assets/b6b4de7e-59d9-45d0-bdfa-7abb41f44c81)
+# LEFT SELECT b.title, c.name AS category FROM books b LEFT JOIN categories c ON b.category_id = c.category_id;
+![image](https://github.com/user-attachments/assets/32b27152-14ff-4e3f-923c-eceeefaaddf9)
+
+# RIGHT SELECT b.title, c.name AS category FROM books b RIGHT JOIN categories c ON b.category_id = c.category_id;
+![image](https://github.com/user-attachments/assets/b9c0a1a2-e3c6-42e3-8388-f0c2fa184511)
+
+# FULL JOIN SELECT b.title, c.name AS category FROM books b LEFT JOIN categories c ON b.category_id = c.category_id UNION SELECT b.title, c.name AS category FROM books b RIGHT JOIN categories c ON b.category_id = c.category_id;
+![image](https://github.com/user-attachments/assets/5ef0f233-c2aa-46a2-bd81-c779694538dd)
 
 # task 4:
 create database sales_db;
