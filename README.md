@@ -1,4 +1,53 @@
 # sqlintern
+#task 7:
+CREATE DATABASE SchoolDB;
+USE SchoolDB;
+
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Department VARCHAR(50),
+    Marks INT
+);
+CREATE TABLE Teachers (
+    TeacherID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Subject VARCHAR(50)
+);
+
+INSERT INTO Students VALUES
+(1, 'Alice', 'CS', 87),
+(2, 'Bob', 'IT', 76),
+(3, 'Charlie', 'CS', 92);
+
+INSERT INTO Teachers VALUES
+(1, 'Dr. Smith', 'CS'),
+(2, 'Prof. John', 'IT');
+
+CREATE VIEW HighScorers AS
+SELECT Name, Marks
+FROM Students
+WHERE Marks > 80;
+
+CREATE VIEW StudentDepartmentInfo AS
+SELECT s.Name AS StudentName, s.Department, t.Name AS TeacherName
+FROM Students s
+JOIN Teachers t ON s.Department = t.Subject;
+
+SELECT * FROM HighScorers;
+
+SELECT * FROM StudentDepartmentInfo;
+
+DROP VIEW HighScorers;
+
+output:
+![Screenshot 2025-07-03 213423](https://github.com/user-attachments/assets/a308f906-d021-48fb-9883-093a7732dda1)
+![Screenshot 2025-07-03 213342](https://github.com/user-attachments/assets/56c81752-9e5c-4e7b-9da3-0a9909dd08ec)
+
+
+
+
+
 # task 6:
 # 1. Scalar Subquery SELECT title, total_copies FROM books WHERE total_copies = (SELECT MAX(total_copies) FROM books);
 ![image](https://github.com/user-attachments/assets/91937f42-4470-435d-90b2-6300996d2b53)
